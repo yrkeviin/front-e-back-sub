@@ -63,3 +63,10 @@
 .slogan span {
   color: rgb(163, 0, 0);
 }
+
+.djCards {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  padding: 5rem;
+}

@@ -1,0 +1,9 @@
+.cardDj {
+    display: flex;
+    align-items: center;
+}
+
+.cardDj img {
+    width: 250px;
+    border-radius: 20px;
+}
