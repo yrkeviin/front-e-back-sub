@@ -1,18 +1,19 @@
 import React from 'react'
+import styles from './Header.module.css'
 
 export default function Header() {
     return (
-    <div>
+    <div className={styles.header}>
         <ul>
-            <li>Listagem</li>
-            <li>Detalhes</li>
+            <li><a href="">Listagem</a></li>
+            <li><a href="">Detalhes</a></li>
         </ul>
 
         <img src="/images/808logo.png" alt="" />
 
         <ul>
-            <li>Sobre mim</li>
-            <li>Contato</li>
+            <li><a href="">Sobre mim</a></li>
+            <li><a href="">Contato</a></li>
         </ul>
     </div>
     )

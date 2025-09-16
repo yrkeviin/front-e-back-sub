@@ -1,0 +1,35 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+.header {
+    display: flex;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+}
+
+.header ul {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: aliceblue;
+    font-family: "Open Sans", sans-serif;
+    transition: .3s ease-in-out;
+    border-bottom: 2px solid transparent;
+}
+
+.header ul li a:hover {
+    color: rgb(173, 173, 173);
+    border-bottom: 2px solid rgb(173, 173, 173);
+    transition: .3s ease-in-out;
+}
+
+.header img {
+    width: 7%;
+    margin: 0 3%;
+}
