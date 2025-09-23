@@ -36,18 +36,27 @@ export default function Home() {
           <h1>EVENTOS ESTÃO <span>AQUI</span>!</h1>
         </div>
 
-        <div className={styles.djCards}>
-          <CardDj
-          index="/images/mu540.jpg"
-          />
+        <div className={styles.djs}>
+          <div className={styles.djCards}>
+            <CardDj
+            index="/images/mu540.jpg"
+            />
 
-          <CardDj
-          index="/images/kenanekel.jpg"
-          />
+            <CardDj
+            index="/images/kenanekel.jpg"
+            />
 
-          <CardDj
-          index="/images/gpzl.jpg"
-          />
+            <CardDj
+            index="/images/gpzl.jpg"
+            />
+          </div>
+
+          <div className={styles.djsText}>
+            <h2>OS QUERIDINHOS</h2>
+            <p>Os DJs mais queridos da galera!
+              Ainda não conhece? Corre lá e confere os sets deles!
+            </p>
+          </div>
         </div>
     </div>
   );
