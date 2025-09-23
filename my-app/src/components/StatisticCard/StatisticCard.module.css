@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+.card {
+    width: 27%;
+    border: 2px solid black;
+    padding: 1%;
+    border-radius: 23px;
+    padding-left: 2%;
+}
+
+.card h1 {
+    font-size: 7rem;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.card p {
+    font-size: 1.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

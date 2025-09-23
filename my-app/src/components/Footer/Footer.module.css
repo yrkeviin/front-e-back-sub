@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+.footer {
+    background-color: black;
+    border-radius: 20px;
+    color: white;
+    height: 50vh;
+    padding: 2%;
+    margin: 5% 1% 3%;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+    font-size: .7rem;
+    cursor: default;
+    font-family: Fjalla One, sans-serif;
+}
+
+.footer p {
+    transition: .3s ease-in-out;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.footer p:hover {
+    color: gray;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.allFooter {
+    display: flex;
+    gap: 10rem;
+}
+
+.logo {
+    width: 15%;
+    margin-right: 12rem;
+}
+
+.logo img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.separator {
+    height: 1px;
+    margin-top: 12%;
+    background-color: rgb(255, 255, 255); 
+    width: 100%;
+}
