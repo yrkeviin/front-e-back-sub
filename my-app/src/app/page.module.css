@@ -146,6 +146,7 @@
 .typeText p {
   margin-top: 9%;
   font-size: 1.3rem;
+  width: 80%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 

@@ -13,11 +13,19 @@ export default function EventosPage() {
     useEffect(() => {
         const fetchEventos = async () => {
             try {
+                console.log("API URL:", apiUrl);
+                console.log("Fazendo requisição para:", `${apiUrl}/eventos`);
+                
                 const response = await fetch(`${apiUrl}/eventos`);
+                console.log("Response status:", response.status);
+                
                 if (!response.ok) throw new Error("Erro ao buscar eventos");
+                
                 const data = await response.json();
+                console.log("Dados recebidos:", data);
                 setEventos(data);
             } catch (err) {
+                console.error("Erro ao buscar eventos:", err);
                 setEventos([]);
             }
         };
@@ -79,6 +87,24 @@ export default function EventosPage() {
                 </div>
             </div>
 
+            <div className={styles.videoSection}>
+                <div className={styles.videoContainer}>
+                    <div className={styles.videoContent}>
+                        <h2>VIVA A EXPERIÊNCIA</h2>
+                        <p>Assista aos melhores momentos dos nossos eventos</p>
+                    </div>
+                    <div className={styles.videoWrapper}>
+                        <iframe 
+                            className={styles.video}
+                            src="https://www.youtube.com/embed/OybACU5Fyew"
+                            title="Evento Promocional"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        />
+                    </div>
+                </div>
+            </div>
+
             <div className={styles.eventsSection}>
                 <div className={styles.sectionTitle}>
                     <h2>TODOS OS EVENTOS</h2>
@@ -97,7 +123,7 @@ export default function EventosPage() {
                             <div key={evento.id || index} className={styles.eventoCard}>
                                 <div className={styles.cardImage}>
                                     <img 
-                                        src={evento.image || `/images/evento-${(index % 4) + 1}.jpg`} 
+                                        src={evento.photo || `/images/evento-${(index % 4) + 1}.jpg`} 
                                         alt={evento.name} 
                                     />
                                     <div className={styles.cardOverlay}>
@@ -121,7 +147,6 @@ export default function EventosPage() {
                                     
                                     <div className={styles.cardActions}>
                                         <button className={styles.infoBtn}>Mais Info</button>
-                                        <button className={styles.ticketBtn}>Ingressos</button>
                                     </div>
                                 </div>
                             </div>
@@ -143,11 +168,7 @@ export default function EventosPage() {
                         <button className={styles.subscribeBtn}>CADASTRAR</button>
                     </div>
                 </div>
-                <div className={styles.newsletterImage}>
-                    <img src="/images/newsletter-bg.jpg" alt="Newsletter" />
-                </div>
             </div>
-
             <Footer />
         </div>
     );

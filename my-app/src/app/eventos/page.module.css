@@ -301,24 +301,6 @@
     color: white;
 }
 
-.ticketBtn {
-    flex: 1;
-    padding: 0.8rem;
-    border: none;
-    background-color: rgb(163, 0, 0);
-    color: white;
-    border-radius: 25px;
-    font-family: 'Fjalla One', sans-serif;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.ticketBtn:hover {
-    background-color: rgb(200, 0, 0);
-    transform: translateY(-2px);
-}
-
-/* Sem Eventos */
 .noEvents {
     grid-column: 1 / -1;
     text-align: center;
@@ -344,7 +326,58 @@
     font-size: 1.2rem;
 }
 
-/* Newsletter */
+.videoSection {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    padding: 6rem 2rem;
+    color: white;
+}
+
+.videoContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.videoContent {
+    flex: 1;
+}
+
+.videoContent h2 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #e20000, #ffa2a2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.videoContent p {
+    font-size: 1.3rem;
+    color: #ccc;
+    line-height: 1.6;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.videoWrapper {
+    flex: 1;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    aspect-ratio: 16/9; /* Mantém proporção do vídeo */
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    border-radius: 15px;
+}
+
 .newsletterSection {
     background-color: black;
     color: white;
@@ -445,6 +478,24 @@
     .eventosCards {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+    
+    .videoContainer {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .videoContent h2 {
+        font-size: 2.5rem;
+    }
+
+    .videoContent p {
+        font-family: 'Lucida Sans', sans-serif;
+    }
+    
+    .videoSection {
+        padding: 3rem 1rem;
     }
     
     .newsletterSection {
