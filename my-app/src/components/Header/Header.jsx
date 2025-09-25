@@ -5,7 +5,7 @@ export default function Header() {
     return (
     <div className={styles.header}>
         <ul>
-            <li><a href="">Listagem</a></li>
+            <li><a href="/">Início</a></li>
             <li><a href="/eventos">Eventos</a></li>
         </ul>
 
