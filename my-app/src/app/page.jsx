@@ -19,12 +19,12 @@ export default function Home() {
         <div className={styles.cardsContainer}>
           <Cards
           title="O BAILE É DE VERDADE"
-          text="Aqui o bagulho é louco e sem neurose. Esquece área VIP, camarote e fitinha. No Submundo808, o rolê é pra todo mundo, na mesma sintonia. É o funk pulsando na caixa, a galera no passinho e o DJ mandando a braba no meio da pista. Pode vir que é sucesso!"
+          text="Aqui o bagulho é louco e sem neurose. Esquece área VIP, camarote e fitinha. Na Submundo808, o rolê é pra todo mundo, na mesma sintonia. É o funk pulsando na caixa, a galera no passinho e o DJ mandando a braba no meio da pista. Pode vir que é sucesso!"
           />
 
           <Cards
           title="RESPEITA, 808!"
-          text="Cansado de rolê que não representa? O Submundo808 chegou pra fortalecer a cultura da favela e botar o grave pra tremer. É mais que uma festa, é um movimento. Aqui, a gente celebra o som que vem da rua e a arte dos nossos DJs. Chega junto pra fazer parte dessa família."
+          text="Cansado de rolê que não representa? A Submundo808 chegou pra fortalecer a cultura da favela e botar o grave pra tremer. É mais que uma festa, é um movimento. Aqui, a gente celebra o som que vem da rua e a arte dos nossos DJs. Chega junto pra fazer parte dessa família."
           />
           
           <Cards
