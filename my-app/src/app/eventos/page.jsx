@@ -39,30 +39,13 @@ export default function EventosPage() {
         <div className={styles.container}>
             <Header />
             
-            {/* Banner Hero */}
-            <div className={styles.heroContainer}>
-                <div className={styles.hero}>
+            <div className={styles.bannerContainer}>
+                <div className={styles.banner}>
                     <h1>EVENTOS</h1>
-                    <p>Onde o funk encontra sua essência</p>
+                    <h3>Onde o funk encontra sua essência</h3>
                 </div>
             </div>
 
-            {/* Filtros de Categoria */}
-            <div className={styles.filtersContainer}>
-                <div className={styles.filters}>
-                    {categories.map((category) => (
-                        <button
-                            key={category}
-                            className={`${styles.filterBtn} ${selectedCategory === category ? styles.active : ''}`}
-                            onClick={() => setSelectedCategory(category)}
-                        >
-                            {category.charAt(0).toUpperCase() + category.slice(1)}
-                        </button>
-                    ))}
-                </div>
-            </div>
-
-            {/* Seção de Destaque */}
             <div className={styles.featuredSection}>
                 <div className={styles.sectionTitle}>
                     <h2>EM DESTAQUE</h2>
@@ -71,7 +54,7 @@ export default function EventosPage() {
                 
                 <div className={styles.featuredCard}>
                     <div className={styles.featuredImage}>
-                        <img src="/images/evento-destaque.jpg" alt="Evento em Destaque" />
+                        <img src="https://f.i.uol.com.br/fotografia/2025/08/12/1755038710689bc3f6162f0_1755038710_3x2_rt.jpg" alt="Evento em Destaque" />
                         <div className={styles.featuredOverlay}>
                             <div className={styles.featuredBadge}>PRÓXIMO EVENTO</div>
                         </div>
@@ -92,12 +75,10 @@ export default function EventosPage() {
                                 <p>Uma noite épica com os melhores DJs da cena funk nacional. Prepare-se para uma experiência única com sound system de alta qualidade e uma produção impecável.</p>
                             </div>
                         </div>
-                        <button className={styles.buyTicketBtn}>COMPRAR INGRESSO</button>
                     </div>
                 </div>
             </div>
 
-            {/* Grid de Eventos */}
             <div className={styles.eventsSection}>
                 <div className={styles.sectionTitle}>
                     <h2>TODOS OS EVENTOS</h2>
@@ -149,7 +130,6 @@ export default function EventosPage() {
                 </div>
             </div>
 
-            {/* Seção de Newsletter */}
             <div className={styles.newsletterSection}>
                 <div className={styles.newsletterContent}>
                     <h2>NÃO PERCA NENHUM EVENTO</h2>
