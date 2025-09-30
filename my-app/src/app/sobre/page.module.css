@@ -5,7 +5,6 @@
     background-color: white;
 }
 
-/* Hero Section */
 .heroContainer {
     width: 100%;
     background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
@@ -160,7 +159,6 @@
     margin-top: 0.5rem;
 }
 
-/* Navegação */
 .navContainer {
     background-color: #f8f9fa;
     padding: 2rem 0;
@@ -211,14 +209,12 @@
     font-size: 1.2rem;
 }
 
-/* Conteúdo Principal */
 .mainContent {
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Seção Introdução */
 .introSection h2 {
     font-family: 'Fjalla One', sans-serif;
     font-size: 3rem;
@@ -290,7 +286,6 @@
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* Skills Section */
 .skillsSection h2 {
     font-family: 'Fjalla One', sans-serif;
     font-size: 3rem;
@@ -372,199 +367,4 @@
     font-family: 'Fjalla One', sans-serif;
     font-weight: bold;
     color: rgb(163, 0, 0);
-}
-
-.techStack {
-    text-align: center;
-    background: #f8f9fa;
-    border-radius: 20px;
-    padding: 2rem;
-}
-
-.techStack h3 {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
-
-.techLogos {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.techLogo {
-    background: black;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    font-family: 'Fjalla One', sans-serif;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.techLogo:hover {
-    background: rgb(163, 0, 0);
-    transform: translateY(-3px);
-}
-
-/* Hobby Section */
-.hobbySection h2 {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.hobbySection h2 span {
-    color: rgb(163, 0, 0);
-}
-
-.hobbyIntro {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 3rem;
-    font-family: 'Lucida Sans', sans-serif;
-}
-
-.hobbiesGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.hobbyCard {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-}
-
-.hobbyCard:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-}
-
-.hobbyImage {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-}
-
-.hobbyImage img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.hobbyCard:hover .hobbyImage img {
-    transform: scale(1.1);
-}
-
-.hobbyOverlay {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 60px;
-    height: 60px;
-    background: rgba(163, 0, 0, 0.9);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hobbyIcon {
-    font-size: 1.5rem;
-}
-
-.hobbyContent {
-    padding: 2rem;
-}
-
-.hobbyContent h3 {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: black;
-}
-
-.hobbyContent p {
-    font-family: 'Lucida Sans', sans-serif;
-    color: #666;
-    line-height: 1.6;
-}
-
-.partyVibes {
-    text-align: center;
-    background: black;
-    color: white;
-    border-radius: 20px;
-    padding: 2rem;
-}
-
-.partyVibes h3 {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
-
-.musicGenres {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.genre {
-    background: rgb(163, 0, 0);
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 25px;
-    font-family: 'Fjalla One', sans-serif;
-    transition: all 0.3s ease;
-}
-
-.genre:hover {
-    background: #ff6b6b;
-    transform: translateY(-3px);
-}
-
-/* Projects Section */
-.projectsSection h2 {
-    font-family: 'Fjalla One', sans-serif;
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.projectsSection h2 span {
-    color: rgb(163, 0, 0);
-}
-
-.projectsIntro {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 3rem;
-    font-family: 'Lucida Sans', sans-serif;
-}
-
-.projectsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-}
-
-.projectCard {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
 }
