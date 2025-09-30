@@ -301,6 +301,11 @@
     color: white;
 }
 
+.infoBtn a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .noEvents {
     grid-column: 1 / -1;
     text-align: center;

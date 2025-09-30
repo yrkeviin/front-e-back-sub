@@ -38,6 +38,14 @@ export default function EventoDetailsPage() {
                 console.log("Evento carregado:", eventoData);
                 console.log("Artistas carregados:", artistasData);
                 
+                // Se não há artistas na API, usar dados mock
+                const artistasFinal = artistasData.length > 0 ? artistasData : [
+                    { id: 1, name: "DJ Caio Prince", genre: "Techno", bio: "DJ Caio Prince é um talento emergente no cenário techno, trazendo sons frescos e inovadores.", photo: "https://boilerroom.tv/cdn-cgi/image/width=3150,height=1653,fit=cover,format=auto/https://videos.boilerroom.tv/assets/dj-caio-prince-clean-cjjbisutez.jpg" },
+                    { id: 2, name: "DJ GBR", genre: "Funk", bio: "DJ GBR é uma lenda do funk, conhecido por seus sets vibrantes e cheios de energia.", photo: "https://videos.boilerroom.tv/assets/dj-gbr-clean-uqrlbonprk.jpg" },
+                    { id: 3, name: "MC PH", genre: "Trap", bio: "MC PH é um dos nomes mais quentes do trap, conhecido por suas letras afiadas e batidas contagiantes.", photo: "https://videos.boilerroom.tv/assets/mc-ph-clean-fdmivrerwm.jpg" },
+                    { id: 4, name: "DJ Blakes", genre: "Bass", bio: "DJ Blakes é conhecido por suas batidas pesadas e sets energéticos que agitam qualquer pista de dança.", photo: "https://videos.boilerroom.tv/assets/dj-blakes-clean-stejnjknrd.jpg" }
+                ];
+                
                 setEvento({
                     ...eventoData,
                     price: "R$ 40,00",
@@ -48,7 +56,7 @@ export default function EventoDetailsPage() {
                     ageRating: "18+",
                     features: ["Sound System Premium", "Open Bar até 2h", "Área VIP", "Estacionamento Grátis"]
                 });
-                setArtistas(artistasData);
+                setArtistas(artistasFinal);
                 
             } catch (err) {
                 console.error("Erro ao buscar dados:", err);
@@ -71,9 +79,12 @@ export default function EventoDetailsPage() {
                     features: ["Sound System Premium", "Open Bar até 2h", "Área VIP", "Estacionamento Grátis"]
                 });
                 setArtistas([
-                    { id: 1, name: "DJ Caio Prince", genre: "Techno", photo: "https://boilerroom.tv/cdn-cgi/image/width=3150,height=1653,fit=cover,format=auto/https://videos.boilerroom.tv/assets/dj-caio-prince-clean-cjjbisutez.jpg" },
-                    { id: 2, name: "DJ GBR", genre: "Funk", photo: "https://videos.boilerroom.tv/assets/dj-gbr-clean-uqrlbonprk.jpg" },
-                    { id: 3, name: "MC PH", genre: "Trap", photo: "https://videos.boilerroom.tv/assets/mc-ph-clean-fdmivrerwm.jpg" }
+                    { id: 1, name: "DJ Caio Prince", genre: "Techno", bio: "DJ Caio Prince é um talento emergente no cenário techno, trazendo sons frescos e inovadores.", photo: "https://boilerroom.tv/cdn-cgi/image/width=3150,height=1653,fit=cover,format=auto/https://videos.boilerroom.tv/assets/dj-caio-prince-clean-cjjbisutez.jpg" },
+                    { id: 2, name: "DJ GBR", genre: "Funk", bio: "DJ GBR é uma lenda do funk, conhecido por seus sets vibrantes e cheios de energia.", photo: "https://videos.boilerroom.tv/assets/dj-gbr-clean-uqrlbonprk.jpg" },
+                    { id: 3, name: "MC PH", genre: "Trap", bio: "MC PH é um dos nomes mais quentes do trap, conhecido por suas letras afiadas e batidas contagiantes.", photo: "https://videos.boilerroom.tv/assets/mc-ph-clean-fdmivrerwm.jpg" },
+                    { id: 4, name: "DJ Blakes", genre: "Bass", bio: "DJ Blakes é conhecido por suas batidas pesadas e sets energéticos que agitam qualquer pista de dança.", photo: "https://videos.boilerroom.tv/assets/dj-blakes-clean-stejnjknrd.jpg" },
+                    { id: 5, name: "Nogueira", genre: "Techno", bio: "Nogueira é um mestre do techno, trazendo sons profundos e hipnóticos para o público.", photo: "https://videos.boilerroom.tv/assets/nogueira-clean-bxyihrvohh.jpg" },
+                    { id: 6, name: "Mu540", genre: "Alternative", bio: "Mu540 é um artista que mistura diversos gêneros para criar uma experiência sonora alternativa.", photo: "https://videos.boilerroom.tv/assets/mu540-clean-vohptcewyl.jpg" }
                 ]);
             } finally {
                 setLoading(false);
@@ -97,6 +108,21 @@ export default function EventoDetailsPage() {
 
     const formatTime = (timeString) => {
         return timeString ? timeString.slice(0, 5) : '';
+    };
+
+    const getMapUrl = (location) => {
+        const encodedLocation = encodeURIComponent(location);
+        return `https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dw901SwHHqg&q=${encodedLocation}`;
+    };
+
+    const getDirectionsUrl = (location) => {
+        const encodedLocation = encodeURIComponent(location);
+        return `https://www.google.com/maps/dir/?api=1&destination=${encodedLocation}`;
+    };
+
+    const handleDirections = () => {
+        const directionsUrl = getDirectionsUrl(evento.location);
+        window.open(directionsUrl, '_blank');
     };
 
     if (loading) {
@@ -165,7 +191,7 @@ export default function EventoDetailsPage() {
                         <h2>Sobre o Evento</h2>
                         <p>{evento.description}</p>
                         
-                        {artistas && artistas.length > 0 && (
+                        {artistas && artistas.length > 0 ? (
                             <div className={styles.artistsSection}>
                                 <h3>Line-up de Artistas</h3>
                                 <div className={styles.artistsList}>
@@ -190,6 +216,13 @@ export default function EventoDetailsPage() {
                                         </div>
                                     ))}
                                 </div>
+                            </div>
+                        ) : (
+                            <div className={styles.artistsSection}>
+                                <h3>Line-up de Artistas</h3>
+                                <p className={styles.noArtists}>
+                                    Artistas serão anunciados em breve!
+                                </p>
                             </div>
                         )}
                         
@@ -272,13 +305,27 @@ export default function EventoDetailsPage() {
                     
                     <div className={styles.locationCard}>
                         <h3>Localização</h3>
-                        <div className={styles.mapPlaceholder}>
-                            <div className={styles.mapIcon}>🗺️</div>
-                            <p>Mapa do local</p>
-                            <small>{evento.location}</small>
+                        <div className={styles.mapContainer}>
+                            <iframe
+                                className={styles.mapFrame}
+                                src={`https://maps.google.com/maps?q=${encodeURIComponent(evento.location)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                title={`Mapa - ${evento.location}`}
+                            />
+                            <div className={styles.mapOverlay}>
+                                <div className={styles.locationInfo}>
+                                    <span className={styles.locationIcon}>📍</span>
+                                    <span>{evento.location}</span>
+                                </div>
+                            </div>
                         </div>
-                        <button className={styles.directionsBtn}>
-                            Como Chegar
+                        <button 
+                            className={styles.directionsBtn}
+                            onClick={handleDirections}
+                        >
+                            🗺️ Como Chegar
                         </button>
                     </div>
                 </div>

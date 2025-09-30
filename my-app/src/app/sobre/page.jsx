@@ -128,7 +128,7 @@ export default function SobreKevinPage() {
                                 </div>
                             </div>
                             <div className={styles.cardImage}>
-                                <img src="/images/kevin-coding.jpg" alt="Kevin programando" />
+                                <img src="/images/kevinProgramando.png" alt="Kevin programando" />
                             </div>
                         </div>
                     </div>
