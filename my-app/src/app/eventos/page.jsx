@@ -1,14 +1,20 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import styles from "./page.module.css";
 
 export default function EventosPage() {
+    const router = useRouter();
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     const [eventos, setEventos] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('todos');
+
+    const handleEventClick = (eventoId) => {
+        router.push(`/eventos/${eventoId}`);
+    };
 
     useEffect(() => {
         const fetchEventos = async () => {
@@ -146,7 +152,12 @@ export default function EventosPage() {
                                     </div>
                                     
                                     <div className={styles.cardActions}>
-                                        <button className={styles.infoBtn}>Mais Info</button>
+                                        <button 
+                                            className={styles.infoBtn}
+                                            onClick={() => handleEventClick(evento.id || index + 1)}
+                                        >
+                                            <a href={`/eventos/${evento.id || index + 1}`}>Mais Info</a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
