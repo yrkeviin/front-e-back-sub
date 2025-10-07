@@ -13,7 +13,7 @@ export default function Header() {
 
         <ul>
             <li><a href="/sobre">Sobre mim</a></li>
-            <li><a href="">Contato</a></li>
+            <li><a href="/contato">Contato</a></li>
         </ul>
     </div>
     )
