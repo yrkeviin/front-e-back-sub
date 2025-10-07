@@ -22,7 +22,6 @@ export default function EventoDetailsPage() {
             try {
                 setLoading(true);
                 
-                // Buscar evento e artistas em paralelo
                 const [eventoResponse, artistasResponse] = await Promise.all([
                     fetch(`${apiUrl}/eventos/${id}`),
                     fetch(`${apiUrl}/artistas`)
@@ -38,7 +37,6 @@ export default function EventoDetailsPage() {
                 console.log("Evento carregado:", eventoData);
                 console.log("Artistas carregados:", artistasData);
                 
-                // Se não há artistas na API, usar dados mock
                 const artistasFinal = artistasData.length > 0 ? artistasData : [
                     { id: 1, name: "DJ Caio Prince", genre: "Techno", bio: "DJ Caio Prince é um talento emergente no cenário techno, trazendo sons frescos e inovadores.", photo: "https://boilerroom.tv/cdn-cgi/image/width=3150,height=1653,fit=cover,format=auto/https://videos.boilerroom.tv/assets/dj-caio-prince-clean-cjjbisutez.jpg" },
                     { id: 2, name: "DJ GBR", genre: "Funk", bio: "DJ GBR é uma lenda do funk, conhecido por seus sets vibrantes e cheios de energia.", photo: "https://videos.boilerroom.tv/assets/dj-gbr-clean-uqrlbonprk.jpg" },
@@ -62,7 +60,6 @@ export default function EventoDetailsPage() {
                 console.error("Erro ao buscar dados:", err);
                 setError(err.message);
                 
-                // Fallback com dados mock
                 setEvento({
                     id: id,
                     name: "SUBMUNDO 808 - EDIÇÃO ESPECIAL",
@@ -259,7 +256,6 @@ export default function EventoDetailsPage() {
                             
                             <div className={styles.eventDetails}>
                                 <div className={styles.detail}>
-                                    <span className={styles.detailIcon}>🕐</span>
                                     <div>
                                         <strong>Horário</strong>
                                         <p>{formatTime(evento.startTime)} - {formatTime(evento.endTime)}</p>
@@ -267,7 +263,6 @@ export default function EventoDetailsPage() {
                                 </div>
                                 
                                 <div className={styles.detail}>
-                                    <span className={styles.detailIcon}>📍</span>
                                     <div>
                                         <strong>Local</strong>
                                         <p>{evento.location}</p>
@@ -276,7 +271,6 @@ export default function EventoDetailsPage() {
                                 
                                 {evento.ageRating && (
                                     <div className={styles.detail}>
-                                        <span className={styles.detailIcon}>🔞</span>
                                         <div>
                                             <strong>Classificação</strong>
                                             <p>{evento.ageRating}</p>
@@ -286,7 +280,6 @@ export default function EventoDetailsPage() {
                                 
                                 {evento.capacity && (
                                     <div className={styles.detail}>
-                                        <span className={styles.detailIcon}>👥</span>
                                         <div>
                                             <strong>Capacidade</strong>
                                             <p>{evento.capacity} pessoas</p>
@@ -316,7 +309,6 @@ export default function EventoDetailsPage() {
                             />
                             <div className={styles.mapOverlay}>
                                 <div className={styles.locationInfo}>
-                                    <span className={styles.locationIcon}>📍</span>
                                     <span>{evento.location}</span>
                                 </div>
                             </div>

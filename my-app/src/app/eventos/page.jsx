@@ -143,7 +143,6 @@ export default function EventosPage() {
                                     <h3>{evento.name}</h3>
                                     <div className={styles.cardDetails}>
                                         <div className={styles.cardLocation}>
-                                            <span>📍</span>
                                             <span>{evento.location}</span>
                                         </div>
                                         <p className={styles.cardDescription}>
