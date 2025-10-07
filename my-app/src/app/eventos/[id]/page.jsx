@@ -196,11 +196,8 @@ export default function EventoDetailsPage() {
                                         <div key={artista.id} className={styles.artistCard}>
                                             <div className={styles.artistImage}>
                                                 <img 
-                                                    src={artista.photo || '/images/default-artist.jpg'} 
+                                                    src={artista.photo} 
                                                     alt={artista.name}
-                                                    onError={(e) => {
-                                                        e.target.src = '/images/default-artist.jpg';
-                                                    }}
                                                 />
                                                 <div className={styles.artistGenre}>{artista.genre}</div>
                                             </div>
